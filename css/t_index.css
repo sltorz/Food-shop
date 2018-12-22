@@ -1,0 +1,172 @@
+.t_box{
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+}
+.t_box .swiper-container{
+    display:flex;
+}
+
+.t_layout{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+.swiper-container{
+    width: 100%;
+    max-width: 768px;
+    overflow: hidden;
+    position: relative;
+}
+.swiper-container .swiper-wrapper{
+    position: relative;
+}
+
+.swiper-container .swiper-wrapper img{
+    width: 100%;
+}
+.swiper-container-horizontal  .swiper-pagination-bullets {
+    bottom: 10px;
+    left: 130px;
+    width: 100%;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 13%;
+    background: #000;
+    opacity: 0.2;
+}
+.swiper-pagination-bullet-active{
+    background-color: white;
+}
+
+.clearfix{overflow:hidden;zoom:1;}
+
+.nav{
+    width: 100%;
+    background-color: white;
+}
+.nav ul{
+    width: 100%;
+    padding: 10px 0px;
+}
+.nav ul li{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.nav ul li img{
+ width:  105px;
+ height:82px;
+}
+
+
+.t_product{
+    width: 100%;
+    background-color: white;
+}
+
+.t_productBox .t_pTip{
+    width: 100%;
+    height: 30px;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+}
+
+.t_productBox .t_pContent a{
+    display: inline-block;
+}
+
+.t_productBox .t_pContent a img{
+    width: 100%;
+    display: block;
+}
+
+
+.f_left {
+    float: left;
+}
+.f_right{
+    float: right;
+}
+.b_right{
+    border-right: 1px solid #ccc;
+}
+.b_left{
+    border-left: 1px solid #ccc;
+}
+
+.a_30{
+    width: 33%;
+}
+
+.m_right_10{
+    margin-right: 10px;
+}
+
+.t_pContent{
+    box-shadow: 3px 3px 3px #ccc;
+    width: 100%;
+    max-width: 768px;
+}
+.t_layout .twf{
+    /*position: relative;*/
+    height:40px ;
+}
+.t_layout .tabs_container{
+    width: 100%;
+    height: 40px;
+    max-width: 768px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.t_layout .tabs_container ul{
+    width: 130%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    flex-direction: row;
+  /*  flex-wrap:nowrap;*/
+}
+.tabs_container ul li{
+    width: 13%;
+    height: 40px;
+    padding: 0 9px;
+    background-color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    border-left: 1px solid gainsboro;
+    flex: 1;
+}
+.tabs_container ul li a{
+    width: 100%;
+    height: 40px;
+    display: inline-block;
+    white-space:nowrap;
+}
+.tabs_container .active a{
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+
+.t_layout .adv{
+    width: 100%;
+    max-width: 768px;
+}
+.t_layout .adv img{
+    width: 100%;
+    margin-top: 5px;
+    background-color: #fff;
+}

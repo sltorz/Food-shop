@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shoppingcar</title>
+    <script src="js/common.js"></script>
+    <script src="js/shoppingcar.js"></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          <style>
+          	*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html,body{
+height: 100%;
+}
+
+html{
+    font-size: 13px;
+}
+
+a,a:hover{
+    text-decoration: none;
+    color:#666;
+
+}
+
+ul{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.clearfix::before,.clearfix::after{
+    display: block;
+    content: "";
+    line-height: 0px;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.y_layout{
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    overflow: hidden auto;
+
+}
+
+.y_head{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    max-width: 768px;
+    height: 40px;
+    padding-left: 5px;
+    display: flex;
+    background-color: white;
+
+}
+
+
+.y_head a{
+    display: inline-block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    font-size: 25px;
+    margin-left:5px; 
+   line-height: 20px;
+   margin-top: 8px;
+}
+.y_head span{
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 38px;
+}
+.y_banner{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.y_banner .y_bannerImg{
+    width: 500%;
+    position: relative;
+    left: -100%;
+}
+
+.y_banner .y_bannerImg li{
+    float: left;
+    width: 20%;
+}
+
+.y_banner .y_bannerImg li img{
+    width: 100%;
+}
+
+.y_banner .y_bannerIndicator{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%,0);
+}
+
+.y_banner .y_bannerIndicator li{
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    float: left;
+    margin-left: 10px;
+}
+.y_banner .y_bannerIndicator li:first-of-type{
+    margin-left: 0px;
+}
+
+.y_banner .y_bannerIndicator .y_active{
+    background-color: black;
+}
+
+.y_intro{
+    width: 100%;
+    height: 102px;
+    position: relative;
+    border-bottom:1px solid #ccc;
+}
+
+.y_intro .y_p1{
+    font-weight: 700;
+    line-height: 1.5em;
+    font-size: 21px;
+    padding-right: 10px;
+}
+.y_intro .y_p2{
+    color: #ee2e52;
+    line-height: 1.5em;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.y_intro .y_p3{
+    width: 100%;
+    padding-left: 10px;
+}
+.y_intro .y_p3 span:first-of-type{
+    margin-right: 5px;
+    vertical-align: baseline;
+    line-height: 1.5em;
+    color: #ee2e52;
+    font-size: 24px;
+}
+.y_intro .y_p3 span:nth-child(2){
+    margin-right: 5px;
+    vertical-align: baseline;
+    color: #999;
+    line-height: 1.5em;
+    font-size: 14px;
+}
+.y_intro .y_p3 span:nth-child(3){
+    position: absolute;
+    right: 0;
+    vertical-align: baseline;
+     color: #999999;
+    line-height: 3em;
+    font-size: 15px;
+}
+.y_pingjia{
+    margin-top: 20px;
+    width: 100%;
+    max-width: 768px;
+   position: relative;
+   margin-bottom: 50px;
+}
+.y_pingjia img{
+    width: 100%;
+}
+
+.y_bottom{
+   position:fixed;
+   bottom: 0;
+   width: 100%;
+   max-width: 768px;
+    z-index: 999;
+    height: 40px;
+    padding-left:20px;
+    display: flex;
+    background-color: white;
+}
+
+.y_bottom a:first-of-type img{
+    height: 100%;
+    flex:1;
+}
+
+.y_bottom a:nth-child(2),.y_bottom a:nth-child(3){
+    display: inline-block;
+    height: 100%;
+    line-height: 40px;
+    margin-left:10%;
+    flex:3;
+    text-align: center;
+}
+.y_bottom a:nth-child(2){
+    color: white;
+    background-color: green;
+    border: 1px solid black;
+}
+.y_bottom a:nth-child(3){
+    color: orange;
+    background-color: white;
+    border:2px solid orange;
+}
+          </style>
+</head>
+<body>
+<div class="y_layout">
+    <div class="y_head">
+        <a href="javascript:history.back(-1)"><</a>
+        <span>商品详情</span>
+    </div>
+    <div class="y_banner">
+        <ul class="y_bannerImg clearfix" id="y_ul">
+        </ul>
+        <ul class="y_bannerIndicator" id="y_lis">
+        </ul>
+    </div>
+    <div class="y_intro">
+        <p class="y_p1" id="y_name"></p>
+        <p class="y_p2" id="y_infor"></p>
+        <div class="y_p3 "><span id="y_price"></span><span id="y_oldprice" style="text-decoration: line-through" ></span><span id="y_sale"></span></div>
+    </div>
+    <div class="y_pingjia"><img src="images/评价.png" alt=""></div>
+    <div class="y_bottom">
+        <a href="denglu.html"><img src="images/购物车.png" alt=""></a>
+       <a href="denglu.html"> 加入购物车</a>
+        <a href="denglu.html">立即购买</a></div>
+</div>
+</body>
+
+<script>
+		var ajax=new XMLHttpRequest();
+        ajax.open("GET","data.php");
+        ajax.send(null);
+        ajax.onreadystatechange=function(){
+        if (this.readyState == 4)
+         {
+         var data = JSON.parse(this.responseText);
+
+		var y_name=document.getElementById('y_name');
+		var y_infor=document.getElementById('y_infor');
+		var y_price=document.getElementById('y_price');
+		var y_oldprice=document.getElementById('y_oldprice');
+		var y_sale=document.getElementById('y_sale');
+		var y_ul=document.getElementById('y_ul');
+		var y_lis=document.getElementById('y_lis');
+
+		 var slt=decodeURI(location.search);
+		 var slt1=slt.split("'");
+         id=slt1[1];
+     
+
+		var count=null;
+		var imgcount=0;
+
+		function y_change(id){
+		switch(id){
+		                case "夏威夷果":
+		                     count=0;
+		                    break;
+		                case "辣条":
+		                      count=1;
+		                    break;
+		                case  "芒果干":
+		                  	count=2;
+		                    break;
+		                case  "面包吐司":
+		            		count=3;
+		                    break;
+		                default:
+		                    break;
+		            }
+		y_name.innerText=data[count].name;
+		y_infor.innerText=data[count].infor;
+		y_price.innerText=data[count].price;
+		y_oldprice.innerText=data[count].oldprice;
+		y_sale.innerText=data[count].sale;
+  
+		imgcount=data[count].imgcount;
+
+		function addlis(imgcount){
+		var str="";
+		for(var i=0;i<imgcount;i++){
+			str+="<li></li>";
+		}
+		y_lis.innerHTML=str;
+		document.querySelector(".y_bannerIndicator li:first-of-type").className='y_active';
+		}
+ function addimg(imgcount,count){
+		var str="";
+		for(var i=0;i<parseInt(imgcount)+2;i++){
+			str+="<li><img src='' ></li>";
+		}
+		y_ul.innerHTML=str;
+
+		if(count==2){
+		document.querySelector("#y_ul li:first-of-type img").src=data[count].img5;
+		document.querySelector("#y_ul li:nth-of-type(2) img").src=data[count].img1;
+		document.querySelector("#y_ul li:nth-of-type(3) img").src=data[count].img2;
+		document.querySelector("#y_ul li:nth-of-type(4) img").src=data[count].img3;
+		document.querySelector("#y_ul li:nth-of-type(5) img").src=data[count].img4;
+		document.querySelector("#y_ul li:nth-of-type(6) img").src=data[count].img5;
+		document.querySelector("#y_ul li:nth-of-type(7) img").src=data[count].img1;
+        document.querySelector(".y_banner .y_bannerImg").style.cssText="width:700%;position:relative;left:-100%;";
+       document.querySelectorAll(".y_banner .y_bannerImg li")[0].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[1].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[2].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[3].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[4].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[5].style.cssText="float:left;width:14.2857%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[6].style.cssText="float:left;width:14.2857%";
+	}else if(count==0){
+		document.querySelector("#y_ul li:first-of-type img").src=data[count].img4;
+		document.querySelector("#y_ul li:nth-of-type(2) img").src=data[count].img1;
+		document.querySelector("#y_ul li:nth-of-type(3) img").src=data[count].img2;
+		document.querySelector("#y_ul li:nth-of-type(4) img").src=data[count].img3;
+		document.querySelector("#y_ul li:nth-of-type(5) img").src=data[count].img4;
+		document.querySelector("#y_ul li:nth-of-type(6) img").src=data[count].img1;
+        document.querySelector(".y_banner .y_bannerImg").style.cssText="width:600%;position:relative;left:-100%;";
+       document.querySelectorAll(".y_banner .y_bannerImg li")[0].style.cssText="float:left;width:16.6667%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[1].style.cssText="float:left;width:16.6667%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[2].style.cssText="float:left;width:16.6667%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[3].style.cssText="float:left;width:16.6667%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[4].style.cssText="float:left;width:16.6667%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[5].style.cssText="float:left;width:16.6667%";    
+	}else if(count==1||count==3){
+		document.querySelector("#y_ul li:first-of-type img").src=data[count].img3;
+		document.querySelector("#y_ul li:nth-of-type(2) img").src=data[count].img1;
+		document.querySelector("#y_ul li:nth-of-type(3) img").src=data[count].img2;
+		document.querySelector("#y_ul li:nth-of-type(4) img").src=data[count].img3;
+		document.querySelector("#y_ul li:nth-of-type(5) img").src=data[count].img1;
+        document.querySelector(".y_banner .y_bannerImg").style.cssText="width:500%;position:relative;left:-100%;";
+       document.querySelectorAll(".y_banner .y_bannerImg li")[0].style.cssText="float:left;width:20%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[1].style.cssText="float:left;width:20%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[2].style.cssText="float:left;width:20%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[3].style.cssText="float:left;width:20%";
+        document.querySelectorAll(".y_banner .y_bannerImg li")[4].style.cssText="float:left;width:20%";  
+	}
+		}
+        addimg(imgcount,count);
+		addlis(imgcount);
+		}
+		y_change(id);
+		toggleImage();
+	}  
+ }
+</script>
+</html>

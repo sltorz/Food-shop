@@ -1,0 +1,134 @@
+body{
+    width: 100%;
+    /*max-width: 736px;*/
+    position: relative;
+}
+.w_search{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+}
+.w_search a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+.w_search .ws_header{
+    width: 100%;
+    height: 50px;
+    border-bottom:1px solid #E4E4E4;
+    font-size: 1rem;
+    /*border: 1px solid red;*/
+    position: relative;
+}
+.w_searchLeft,.w_searchRight{
+    position: absolute;
+    top: 0px;
+}
+.w_searchLeft{
+    float: left;
+    font-size:1.5rem;
+    left:17px;
+}
+.w_searchLeft p{
+    font-weight: 700;
+}
+.w_searchRight{
+    height: 30px;
+    font-size: 1rem;
+    right: 6px;
+    top: 9px;
+    background-color: white;
+}
+#wwsearch{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding:0px 60px;
+    left:-12px;
+}
+#wwsearch input{
+    border-radius: 5px;
+    width: 100%;
+    margin-top:9px;
+    height: 30px;
+    padding-left: 28px;
+}
+.w_tu{
+    position: absolute;
+    top: 30%;
+    left:65px;
+}
+.ws_main h3{
+    position: relative;
+    left: 13px;
+    top: 16px;
+    font-weight:300;
+    -webkit-user-select:none;
+}
+.w_remen{
+    position: relative;
+    margin-top: 23px;
+    left: 10px;
+    width: 95%;
+    border-top: 1px solid #E4E4E4;
+
+}
+.w_remen button{
+    background-color:white;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+    height:40px;
+    margin-top: 10px;
+}
+.w_remen button a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+.w_remen button p{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+
+.ws_bottom{
+    position: relative;
+    left: 10px;
+    width: 95%;
+    top: 33px;
+    /*height: 100%;*/
+}
+.ws_bottom h3{
+    font-weight: 300;
+    display: block;
+    left: 13px;
+    top: 16px;
+    border-bottom:1px solid #E4E4E4;
+    padding-bottom:5px;
+}
+.w_qc{
+    position: relative;
+    height: 40px;
+    left: 37%;
+    top: 50px;
+}
+.w_qc button{
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    border: 1px solid orangered;
+    color:orangered;
+    border-radius: 5px;
+}
+.w_fenge{
+    position: relative;
+    width: 100%;
+    height: 13px;
+    background-color: #E4E4E4;
+    top: 22px;
+}
